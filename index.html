@@ -1,0 +1,214 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>Sprout-Theme</title>
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="static/hl-styles/github-gist.css">
+    <!-- loading css -->
+    <style>
+      html, body {
+      margin: 0;
+      padding: 0;
+
+      height: 100%;
+      width: 100%;
+      }
+      
+      .dash-loadding {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      margin-left: -20px;
+      z-index: 99;
+      }
+      
+      .spinner {
+      margin: 100px auto;
+      width: 40px;
+      height: 40px;
+      
+      -webkit-animation: sk-rotate 2.0s infinite linear;
+      animation: sk-rotate 2.0s infinite linear;
+      }
+
+      .dot1, .dot2 {
+      width: 60%;
+      height: 60%;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      background-color: #333;
+      border-radius: 100%;
+      
+      -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+      animation: sk-bounce 2.0s infinite ease-in-out;
+      }
+
+      .dot2 {
+      top: auto;
+      bottom: 0;
+      -webkit-animation-delay: -1.0s;
+      animation-delay: -1.0s;
+      }
+
+      @-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+      @keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+      @-webkit-keyframes sk-bounce {
+      0%, 100% { -webkit-transform: scale(0.0) }
+      50% { -webkit-transform: scale(1.0) }
+      }
+
+      @keyframes sk-bounce {
+      0%, 100% { 
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+      } 50% { 
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+      }
+      }
+    </style>
+    <!-- loading css end -->
+  </head>
+  <body>
+
+    <header>
+      <ul>
+        <li><a href="#/">Experience-Index</a></li>
+        <li><a href="">Homesite</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Github</a></li>
+        <li style="float: right;"><a href="">About Experience-Wall</a></li>
+      </ul>
+
+    </header>
+    <div class="dash-loadding spinner" id="loading" v-show="show">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+    
+    <div id="app" style="display: none;">
+      
+      <div class="main">
+        <div id="container" v-bind:class="{'full': !onCategory}"></div>
+        <div class="slide-dash" v-bind:class="{'off': !onCategory}">
+          
+          <img class="slide-dash--bg" src="static/img/ArkansasGeese_ZH-CN11140946197_1366x768.jpg">
+
+          <div class="fonts">
+            <p>E</p>
+            <p>M</p>
+            <p>P</p>
+            <p>IR</p>
+            <p>I</p>
+            <p>CI</p>
+            <p>S</p>
+            <p>M</p>
+          </div>
+
+
+          <div class="slide-main-text">
+
+            <p class="slide-main-text--title">Fire and Blood</p>
+            <p class="slide-main-text--text">
+              We're fantastically incredibly sorry for all these extremely unreasonable<br />
+              things we did.  I can only plead that my simple, barely-sentient friend<br />
+              and myself are underprivileged, deprived and also college students.<br />
+	      -- Waldo D.R. Dobbs
+            </p>
+          </div>
+          <!-- <div class="layer"> -->
+          <!--   <img src="static/img/how-to-write-a-book-1103081-TwoByOne.jpg"> -->
+          <!--   <div class="mask"> -->
+          <!--     <div class="letters"> -->
+          <!--       <ul class="letter letter-e"> -->
+          <!--         <li></li> -->
+          <!--         <li></li> -->
+          <!--         <li></li> -->
+          <!--         <li></li> -->
+          <!--       </ul> -->
+
+          <!--       <ul class="letter letter-x"> -->
+          <!--         <li></li> -->
+          <!--         <li></li> -->
+          <!--       </ul> -->
+          <!--     </div> -->
+              
+          <!--   </div> -->
+          <!-- </div> -->
+          <!-- <ul class="letter letter-e"> -->
+          <!--   <li></li> -->
+          <!--   <li></li> -->
+          <!--   <li></li> -->
+          <!--   <li></li> -->
+          <!-- </ul> -->
+          <!-- <div class="box"> -->
+
+          <!--   <\!-- <img class="sprout-head" alt="" src="static/img/sprout-head.png"/> -\-> -->
+
+          <!--   <div class="layer"> -->
+          <!--     <img src="static/img/how-to-write-a-book-1103081-TwoByOne.jpg"> -->
+          <!--     <div class="mask"> -->
+          <!--       <div class="letters"> -->
+          <!--         <\!-- <ul class="letter letter-e"> -\-> -->
+          <!--         <\!--   <li></li> -\-> -->
+          <!--         <\!--   <li></li> -\-> -->
+          <!--         <\!--   <li></li> -\-> -->
+          <!--         <\!--   <li></li> -\-> -->
+          <!--         <\!-- </ul> -\-> -->
+
+          <!--         <ul class="letter letter-x"> -->
+          <!--           <li></li> -->
+          <!--           <li></li> -->
+          <!--         </ul> -->
+          <!--       </div> -->
+                
+          <!--     </div> -->
+          <!--   </div> -->
+            
+          <!-- </div> -->
+          
+        </div>
+
+        <div class="category-list" v-bind:class="{'left': !onCategory}">
+          <w-category v-bind:class="{'off': !onCategory}"></w-category>
+        </div>
+
+        <div class="experience-list" v-bind:class="{'off': onCategory}">
+          <w-experience v-bind:class="{'off': onCategory}"></w-experience>
+        </div>
+      </div>
+      
+      
+    </div>
+    <footer>
+      <p>
+        Copyright 2016-2016 Experience-wall themes. All rights reserved.
+      </p>
+      <ul>
+        <li><a href="http://github.com/AbyChan"><img width="20" src="static/img/github.png"></a></li>
+      </ul>
+    </footer>
+    
+    <script async src="static/js/threeBundle.min.js"></script>
+
+    <!-- <script async src="static/js/Projector.js"></script> -->
+    <!-- <script async src="static/js/CanvasRenderer.js"></script> -->
+    <!-- <script async src="static/js/Bird.js"></script> -->
+
+
+    <script src="static/js/highlight.pack.js"></script>
+    
+    <script src="assets/mainBundle.js"></script>
+    
+    <!-- <script async defer src="static/js/canvasBird.js"></script> -->
+    
+  </body>
+</html>
