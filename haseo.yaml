@@ -1,5 +1,5 @@
-name: feed-parse-lib
+name: experience
 flow:
-  - install: yarn install
+  - theme: git submodule init && git submodule update && cd theme && yarn install
   - build: npm run compile
   - test: npm run test
