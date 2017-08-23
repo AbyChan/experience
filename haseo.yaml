@@ -4,4 +4,4 @@ flow:
   - yarn theme: cd theme && git checkout master && git pull origin master && yarn install
   - build: ./node_modules/.bin/holothuroidea build . ./theme/static/data
   - render: cd theme && npm run generate
-  - update site: rm /var/www/experience && cp -r theme/dist /var/www/experience
+  - update site: rm -rf /var/www/experience && cp -r theme/dist /var/www/experience
