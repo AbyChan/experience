@@ -1,6 +1,7 @@
 name: experience
 flow:
   - install: git submodule init && git submodule update && yarn install
-  - yarn theme: cd theme && yarn install
-  - build: ./node_modules/.bin/holothuroidea . ./theme/static/data
+  - yarn theme: cd theme && git pull origin master && git checkout master && yarn install
+  - build: ./node_modules/.bin/holothuroidea build . ./theme/static/data
   - render: cd theme && npm run generate
+  - update site: cp -r theme/dist /var/www/experience
