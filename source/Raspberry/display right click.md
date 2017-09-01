@@ -1,7 +1,7 @@
 --title:display right click
 --date:2015-12-28 06:48:35
 --tag:
-#---
+###
 `/etc/X11/xorg.conf `
 ```
 Section "InputClass"

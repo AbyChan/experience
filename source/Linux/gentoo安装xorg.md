@@ -1,7 +1,7 @@
 --title:gentoo安装xorg
 --date:2015-12-18 01:53:38
 --tag:
-#---
+###
 必须要在` make.conf `里面设置
 ```
 ## (For mouse, keyboard, and Synaptics touchpad support)

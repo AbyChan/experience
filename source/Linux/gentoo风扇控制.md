@@ -1,7 +1,7 @@
 --title:gentoo风扇控制
 --date:2015-12-15 13:54:09
 --tag:
-#---
+###
 ```shell
     emerge sys-apps/lm_sensors
     sensors-detect

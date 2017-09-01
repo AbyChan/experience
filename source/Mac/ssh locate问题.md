@@ -1,7 +1,7 @@
 --title:ssh locate问题
 --date:2015-12-28 03:15:58
 --tag:
-#---
+###
 ssh remote出现
 ```
 perl: warning: Please check that your locale settings:
